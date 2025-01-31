@@ -42,3 +42,11 @@ next-env.d.ts
 
 config
 
+eslint.*
+next.config.js
+tsconfig.json
+tailwind.config.js
+postcss.config.js
+package.json
+package-lock.json
+

@@ -12,6 +12,8 @@ import {
   GoogleAuthProvider,
   onAuthStateChanged
 } from "firebase/auth";
+import { setDoc, doc, getFirestore } from "firebase/firestore";
+import { app } from "../../../config/firebase"; // Ensure you have exported the Firebase app instance from your config file
 
 
 export default function Home() {
@@ -41,8 +43,10 @@ export default function Home() {
 
     try {
       if (isSignup) {
-        await createUserWithEmailAndPassword(auth, email, password);
-        // You might want to store additional user data like fullName in Firestore here
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+        const db = getFirestore(app);
+        await setDoc(doc(db, "users", user.uid), { fullName });
       } else {
         await signInWithEmailAndPassword(auth, email, password);
       }

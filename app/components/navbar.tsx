@@ -1,11 +1,10 @@
-// components/Navbar.tsx
 "use client";
 import { useAuth } from "../../context/authContext";
 import LogoutButton from "./LogoutButton";
 
 export default function Navbar() {
     const { user } = useAuth();
-    console.log("user info :", user);
+    // console.log("user info :", user);
     return (
         <header className="flex justify-between items-center p-4 bg-white shadow-md">
         <div className="text-2xl font-bold text-blue-600 px-4">SkillExchange</div>
