@@ -129,7 +129,7 @@ export default function Home() {
                 placeholder="Full Name"
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
-                className="w-full px-4 py-2 border rounded-md mb-3"
+                className="w-full px-4 text-black py-2 border rounded-md mb-3"
                 required
               />
               <input
