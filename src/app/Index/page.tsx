@@ -2,9 +2,8 @@
 import { useState, useEffect } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import Link from "next/link";
-import { auth } from "../../../config/firebase";
-// import { auth } from "/Users/drextor/dev/skill-swap/config/firebase.js";
-
+import { auth, app } from "@/config/firebase";
+import { getAuth, signOut } from "firebase/auth";
 import { 
   signInWithEmailAndPassword, 
   createUserWithEmailAndPassword,
@@ -13,8 +12,6 @@ import {
   onAuthStateChanged
 } from "firebase/auth";
 import { setDoc, doc, getFirestore } from "firebase/firestore";
-import { app } from "../../../config/firebase"; // Ensure you have exported the Firebase app instance from your config file
-
 
 export default function Home() {
   const [isSignup, setIsSignup] = useState(false);
@@ -24,12 +21,19 @@ export default function Home() {
   const [fullName, setFullName] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const auth = getAuth();
+
+  // signOut(auth).then(() => {
+  //   console.log("User signed out");
+  // }).catch((error) => {
+  //   console.error("Error signing out:", error);
+  // });
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         // User is signed in, redirect to landing page
-        window.location.href = "./components/Landing";
+        window.location.href = "./Landing";
       }
     });
 
