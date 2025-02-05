@@ -1,7 +1,7 @@
 export default function Listings() {
     return (
-        <div>
-            listings
+        <div className="text-black">
+            Listings
         </div>
     )
 }

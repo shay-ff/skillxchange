@@ -22,7 +22,7 @@ export default function Navbar() {
     } catch (error) {
       console.error("Error logging out:", error);
     }
-  };
+  };  
 
   return (
     <header className="flex justify-between border-r- items-center p-2 bg-white shadow-md">

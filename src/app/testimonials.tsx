@@ -1,7 +1,7 @@
 export default function Testimonials() {
     return (
-        <div>
-            testimonials
+        <div className="text-black">
+            Testimonials
         </div>
     )
 };

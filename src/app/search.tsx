@@ -17,7 +17,7 @@ export default function search(){
         <div className="flex items-center justify-end">
       <form 
         onSubmit={handleSubmit}
-        className={`flex items-center bg-white rounded-full border text-black border-blue-300 overflow-hidden transition-all duration-300 ease-in-out ${
+        className={`flex items-center bg-white rounded-full border text-black  overflow-hidden transition-all duration-300 ease-in-out ${
           expanded ? 'w-64' : 'w-10'
         }`}
       >

@@ -1,6 +1,6 @@
 export default function Welcome() {
     return (
-        <div>
+        <div className="text-black">
             Welcome, user!
         </div>
     )

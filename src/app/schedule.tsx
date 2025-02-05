@@ -1,6 +1,6 @@
 export default function Schedule() {
     return (
-        <div>
+        <div className="text-black">
             schedules
         </div>
     )
